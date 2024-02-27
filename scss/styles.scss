@@ -1,1 +1,14 @@
-@import "layout abstract"
+@import "partials/layout", "partials/abstract";
+
+.background-container {
+	background-color: $flag-black;
+}
+.heading-text {
+	color: $flag-purple;
+}
+.footer-copyright {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	background-color: grey;
+}
