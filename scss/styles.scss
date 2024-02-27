@@ -1,10 +1,18 @@
-@import "partials/layout", "partials/abstract";
+@import "partials/abstract", "partials/layout";
 
+body{
+	background-color: $flag-black
+}
 .background-container {
-	background-color: $flag-black;
+
+}
+.container{
+	width: 750px;
 }
 .heading-text {
 	color: $flag-purple;
+	font-family: Lemonada;
+	text-align: center;
 }
 .footer-copyright {
 	position: absolute;
