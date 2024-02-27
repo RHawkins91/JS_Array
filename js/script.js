@@ -1,1 +1,0 @@
-const picsumUrl = "https://picsum.photo/600"
