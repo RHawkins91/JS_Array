@@ -52,29 +52,78 @@ input {
 }
 .card {
   border: 5px #9C59D1 solid;
-  border-radius: 5px;
+  border-radius: 15px;
   text-align: center;
+  padding: 20px 0;
 }
 
 body {
   background-color: #2C2C2C;
 }
 
+.heading-container {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .container {
-  width: 750px;
+  width: 350px;
+  margin: auto;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .heading-text {
   color: #9C59D1;
   font-family: Lemonada;
   text-align: center;
+  font-size: 18px;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.subheading {
+  font-size: 20px;
 }
 
 .footer-copyright {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background-color: grey;
+  bottom: 0px;
+  left: 0px;
+  background-color: #9C59D1;
+  color: #FCF434;
+  padding: 10px 20px;
+  border-top-right-radius: 20px;
+}
+
+.email-assignment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.email-assignment button {
+  background-color: #9C59D1;
+  color: #FCF434;
+  border-color: #FCF434;
+  border-radius: 20px;
+}
+.email-assignment input {
+  width: 80%;
+}
+.email-assignment select {
+  width: 80%;
+}
+.email-assignment label {
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,17 +6,62 @@ body{
 .background-container {
 
 }
+.heading-container{
+	padding: 20px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
 .container{
-	width: 750px;
+	width: 350px;
+	margin: auto;
+}
+.card-container{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 .heading-text {
 	color: $flag-purple;
 	font-family: Lemonada;
 	text-align: center;
+	font-size: 18px;
 }
+.title {
+	font-size: 30px;
+}
+.subheading {
+	font-size: 20px;
+}
+//footer
 .footer-copyright {
 	position: absolute;
-	bottom: 10px;
-	left: 10px;
-	background-color: grey;
+	bottom: 0px;
+	left: 0px;
+	background-color: $flag-purple;
+	color: $flag-yellow;
+	padding: 10px 20px;
+	border-top-right-radius: 20px;
+}
+//form
+.email-assignment {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	button {
+		background-color: $flag-purple;
+		color: $flag-yellow;
+		border-color: $flag-yellow;
+		border-radius: 20px;
+	}
+	input {
+		width: 80%;
+	}
+	select {
+		width: 80%;
+	}
+	label {
+		font-size: 16px;
+	}
 }
