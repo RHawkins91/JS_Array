@@ -1,0 +1,28 @@
+//imports
+@import "_variables";
+//Breakpoints
+@mixin mq($break) {
+	@if $break == "mobile" {
+		@media (min-width: $brk-sm) and (max-width: $brk-med){
+			@content;
+		}
+	}
+	@else if $break == "tablet" {
+		@media (min-width: $brk-med + 1) {
+			@content;
+		}
+	}
+	@else if $break == "landscape" {
+		@media (min-width: $brk-lrg + 1) {
+			@content;
+		}
+	}
+	@else if $break == "desktop" {
+		@media (min-width: $brk-xl) {
+			@content;
+		}
+	}
+	@else {
+		@error "no valid breakpoint passed"
+	}
+}

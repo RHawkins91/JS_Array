@@ -13,8 +13,17 @@ body{
 	gap: 10px;
 }
 .container{
-	width: 350px;
+	width: 95vw;
 	margin: auto;
+	@include mq("tablet"){
+		width: 95vw;
+	}
+	@include mq("landscape"){
+		width: 95vw;
+	}
+	@include mq("desktop"){
+		width: 95vw;
+	}
 }
 .card-container{
 	display: flex;

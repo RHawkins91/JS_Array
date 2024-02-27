@@ -69,8 +69,23 @@ body {
 }
 
 .container {
-  width: 350px;
+  width: 95vw;
   margin: auto;
+}
+@media (min-width: 769px) {
+  .container {
+    width: 95vw;
+  }
+}
+@media (min-width: 981px) {
+  .container {
+    width: 95vw;
+  }
+}
+@media (min-width: 1025px) {
+  .container {
+    width: 95vw;
+  }
 }
 
 .card-container {
