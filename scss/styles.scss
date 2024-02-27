@@ -65,12 +65,6 @@ body{
 	flex-direction: column;
 	gap: 20px;
 	align-items: center;
-	button {
-		background-color: $flag-purple;
-		color: $flag-yellow;
-		border-color: $flag-yellow;
-		border-radius: 20px;
-	}
 	input {
 		width: 80%;
 	}
@@ -80,4 +74,10 @@ body{
 	label {
 		font-size: 16px;
 	}
+}
+button {
+	background-color: $flag-purple;
+	color: $flag-yellow;
+	border-color: $flag-yellow;
+	border-radius: 20px;
 }

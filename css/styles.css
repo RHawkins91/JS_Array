@@ -136,12 +136,6 @@ body {
   gap: 20px;
   align-items: center;
 }
-.email-assignment button {
-  background-color: #9C59D1;
-  color: #FCF434;
-  border-color: #FCF434;
-  border-radius: 20px;
-}
 .email-assignment input {
   width: 80%;
 }
@@ -150,6 +144,13 @@ body {
 }
 .email-assignment label {
   font-size: 16px;
+}
+
+button {
+  background-color: #9C59D1;
+  color: #FCF434;
+  border-color: #FCF434;
+  border-radius: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
