@@ -1,11 +1,26 @@
 // Image Generator
 	//Variables
-const picsumUrl = "https://picsum.photo/600";
-const imageDiv = document.querySelector(".random-image-container");
+const picsumUrl = "https://picsum.photos/400?random=";
+const imageRandomContainer = document.querySelector(".random-image-container");
+const assignButton = document.getElementById("image-gen-button");
 
+var randomImg = document.createElement('img');
 
+assignButton.addEventListener('click',() => {    
+     remove_old_image();
+     gen_image();    
+});
 
+randomImg.addEventListener('load', gen_image());
 
+async function gen_image() {
+	randomImg = document.createElement("img")
+	randomImg.src = picsumUrl + new Date().getTime()
+	imageRandomContainer.appendChild(randomImg)
+};
+async function remove_old_image() {
+	imageRandomContainer.removeChild(randomImg)
+}
 
 
 // Title Animation

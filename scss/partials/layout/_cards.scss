@@ -8,4 +8,17 @@
 	-webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5), inset 0 0 10px black;
 	-moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5), inset 0 0 10px black;
 	box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5), inset 0 0 10px black;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	img {
+		border-radius: 20px;
+	}
+	button {
+		width: 20vw;
+		align-self: center;
+	}
+}
+.random-image-card {
+	height: 534px;
 }

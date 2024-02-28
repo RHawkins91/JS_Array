@@ -59,6 +59,20 @@ input {
   -webkit-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5), inset 0 0 10px black;
   -moz-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5), inset 0 0 10px black;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5), inset 0 0 10px black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card img {
+  border-radius: 20px;
+}
+.card button {
+  width: 20vw;
+  align-self: center;
+}
+
+.random-image-card {
+  height: 534px;
 }
 
 body {
@@ -121,9 +135,10 @@ body {
 }
 
 .footer-copyright {
-  position: absolute;
+  position: sticky;
   bottom: 0px;
   left: 0px;
+  width: 30vw;
   background-color: #9C59D1;
   color: #FCF434;
   padding: 10px 20px;
