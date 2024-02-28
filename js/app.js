@@ -6,13 +6,16 @@ const assignButton = document.getElementById("image-gen-button");
 
 var randomImg = document.createElement('img');
 
+
+	//Event Listeners
+randomImg.addEventListener('load', gen_image());
+
 assignButton.addEventListener('click',() => {    
      remove_old_image();
      gen_image();    
 });
 
-randomImg.addEventListener('load', gen_image());
-
+	//Functions
 async function gen_image() {
 	randomImg = document.createElement("img")
 	randomImg.src = picsumUrl + new Date().getTime()
@@ -20,7 +23,7 @@ async function gen_image() {
 };
 async function remove_old_image() {
 	imageRandomContainer.removeChild(randomImg)
-}
+};
 
 
 // Title Animation

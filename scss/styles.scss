@@ -52,13 +52,15 @@ body{
 //footer
 .footer-copyright {
 	position: sticky;
-	bottom: 0px;
+	top: calc(100vh - 20vh);
 	left: 0px;
 	width: 30vw;
 	background-color: $flag-purple;
 	color: $flag-yellow;
 	padding: 10px 20px;
 	border-top-right-radius: 20px;
+	z-index: 10;
+	margin-top: 20px;
 }
 //form
 .email-assignment {
@@ -81,4 +83,5 @@ button {
 	color: $flag-yellow;
 	border-color: $flag-yellow;
 	border-radius: 20px;
+	font-family: Lemonada;
 }

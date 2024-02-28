@@ -65,6 +65,9 @@ input {
 }
 .card img {
   border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
 }
 .card button {
   width: 20vw;
@@ -136,13 +139,15 @@ body {
 
 .footer-copyright {
   position: sticky;
-  bottom: 0px;
+  top: 80vh;
   left: 0px;
   width: 30vw;
   background-color: #9C59D1;
   color: #FCF434;
   padding: 10px 20px;
   border-top-right-radius: 20px;
+  z-index: 10;
+  margin-top: 20px;
 }
 
 .email-assignment {
@@ -166,6 +171,7 @@ button {
   color: #FCF434;
   border-color: #FCF434;
   border-radius: 20px;
+  font-family: Lemonada;
 }
 
 /*# sourceMappingURL=styles.css.map */

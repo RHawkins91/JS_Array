@@ -5,5 +5,5 @@
 - ~~**Create Folder Structure**~~
 - ~~**Create Base HTML**~~
 - ~~**Create Base Stylesheet**~~
-- **Hook in to picsum**
+- ~~**Hook in to picsum**~~
 - **Create Functions**
