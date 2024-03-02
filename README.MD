@@ -6,4 +6,6 @@
 - ~~**Create Base HTML**~~
 - ~~**Create Base Stylesheet**~~
 - ~~**Hook in to picsum**~~
-- **Create Functions**
+- ~~**Validate email**~~
+- **Store Image and Email**
+- **Display Image and Email**
