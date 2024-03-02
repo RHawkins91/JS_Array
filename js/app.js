@@ -5,7 +5,7 @@ const imageRandomContainer = document.querySelector(".random-image-container");
 const assignButton = document.getElementById("image-gen-button");
 
 var randomImg = document.createElement('img');
-
+var assignedImage = null
 
 	//Event Listeners
 randomImg.addEventListener('load', gen_image());
@@ -20,6 +20,7 @@ async function gen_image() {
 	randomImg = document.createElement("img")
 	randomImg.src = picsumUrl + new Date().getTime()
 	imageRandomContainer.appendChild(randomImg)
+	assignedImage = randomImg.src
 };
 async function remove_old_image() {
 	imageRandomContainer.removeChild(randomImg)
@@ -45,6 +46,30 @@ function validateForm() {
 		return false
 	}
 } 
+
+//Assign image to email
+//Dictionary
+var emailImagePairDict = {};
+//Constructor
+function email_image_group(email, image, email_dict=emailImagePairDict){
+	this.email = email;
+	this.images = [];
+	this.images = this.images.push(image);
+	if (email in email_dict){
+		console.log(email_dict[this.email])
+		console.log(email_dict[this.email].images)
+		email_dict[this.email].images.push(image);
+		return;
+	} else {
+	email_dict[this.email] = this;
+	}
+};
+//Object 
+// const emailImageGroup = {
+// 	email: "",
+// 	images: []
+// };
+
 
 // Title Animation
 	//Variables
