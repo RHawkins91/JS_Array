@@ -35,13 +35,14 @@ function validateForm() {
 	if (form == "") {
 		alert("Email must not be empty");
 		document.getElementById("email-input").focus();
-		return false;
+		// return false;
 	} else if (!regex.test(form)){
 		alert ("Invalid Email")
 		document.getElementById("email-input").focus();
-		return false
+		// return false
 	} else {
-		return true
+		alert ("Good job!")
+		// return false
 	}
 } 
 

@@ -70,9 +70,34 @@ body{
 	align-items: center;
 	input {
 		width: 80%;
+		color: $flag-white;
+		background-color: lighten($flag-black, 10%);
+		border-radius: 5px;
+		border-color: $flag-purple;
+	}
+	input:focus {
+		outline: none;
+		border: 2px solid #fc00ec;
+		-webkit-box-shadow: 0px 0px 20px 1px rgba(252, 0, 236,0.5);
+		-moz-box-shadow: 0px 0px 20px 1px rgba(252, 0, 236,0.5);
+		box-shadow: 0px 0px 20px 1px rgba(252, 0, 236,0.5);
 	}
 	select {
 		width: 80%;
+		color: $flag-white;
+		background-color: lighten($flag-black, 10%);
+		border-radius: 5px;
+		border-color: $flag-purple;
+	}
+	select:focus {
+		outline: none;
+		border: 2px solid #fc00ec;
+		-webkit-box-shadow: 0px 0px 20px 1px rgba(252, 0, 236,0.5);
+		-moz-box-shadow: 0px 0px 20px 1px rgba(252, 0, 236,0.5);
+		box-shadow: 0px 0px 20px 1px rgba(252, 0, 236,0.5);
+	}
+	select:hover {
+		cursor: pointer;
 	}
 	label {
 		font-size: 16px;
@@ -84,4 +109,7 @@ button {
 	border-color: $flag-yellow;
 	border-radius: 20px;
 	font-family: Lemonada;
+}
+button:hover {
+	cursor: pointer;
 }
