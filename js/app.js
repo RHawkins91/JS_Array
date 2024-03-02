@@ -26,6 +26,25 @@ async function remove_old_image() {
 };
 
 
+
+
+// Form validation
+function validateForm() {
+	let form = document.forms["email-form"]["email-input"].value;
+	let regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+	if (form == "") {
+		alert("Email must not be empty");
+		document.getElementById("email-input").focus();
+		return false;
+	} else if (!regex.test(form)){
+		alert ("Invalid Email")
+		document.getElementById("email-input").focus();
+		return false
+	} else {
+		return true
+	}
+} 
+
 // Title Animation
 	//Variables
 const textToAnimate = document.querySelector(".anim-text");
