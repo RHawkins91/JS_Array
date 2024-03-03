@@ -7,6 +7,11 @@ const assignButton = document.getElementById("image-gen-button");
 var randomImg = document.createElement('img');
 var assignedImage = null
 
+
+//Dictionary
+var emailImagePairDict = {};
+
+
 	//Event Listeners
 randomImg.addEventListener('load', gen_image());
 
@@ -43,32 +48,52 @@ function validateForm() {
 		return false
 	} else {
 		alert ("Good job!")
+		email_image_group_thing(form)
+		console.log(emailImagePairDict)
+		push_image_into_array(emailImagePairDict[form], assignedImage)
 		return false
+		
 	}
 } 
 
 //Assign image to email
-//Dictionary
-var emailImagePairDict = {};
+
 //Constructor
-function email_image_group(email, image, email_dict=emailImagePairDict){
+function email_image_group(email){
 	this.email = email;
 	this.images = [];
-	this.images = this.images.push(image);
-	if (email in email_dict){
-		console.log(email_dict[this.email])
-		console.log(email_dict[this.email].images)
-		email_dict[this.email].images.push(image);
-		return;
+};
+
+function push_image_into_array(email_image_pair, image){
+	if (!(email_image_pair.images.includes(image))){
+		email_image_pair.images.push(image);
 	} else {
-	email_dict[this.email] = this;
+		console.log("Already there")
+		return
 	}
 };
+
+function email_image_group_thing(email, email_image_pair_dict=emailImagePairDict){
+	if (!(email in email_image_pair_dict)){
+		email_image_pair_dict[email] = new email_image_group(email)
+		console.log(email_image_pair_dict)
+	};
+};
+
 //Object 
 // const emailImageGroup = {
 // 	email: "",
 // 	images: []
 // };
+//if (email in email_dict){
+	//this.images = this.images.push(image);
+	// 	console.log(email_dict[this.email])
+	// 	console.log(email_dict[this.email].images)
+	// 	email_dict[this.email].images.push(image);
+	// 	return;
+	// } else {
+	// email_dict[this.email] = this;
+	// }
 
 
 // Title Animation
