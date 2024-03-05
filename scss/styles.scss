@@ -1,10 +1,10 @@
 @import "partials/abstract", "partials/layout";
 
 body{
-	background-color: $flag-black
+	background-color: $flag-black;
+	overflow-x: hidden;
 }
 .background-container {
-
 }
 .heading-container{
 	padding: 20px 0;
@@ -25,18 +25,22 @@ body{
 	width: 95vw;
 	margin: auto;
 	@include mq("tablet"){
+		width: 94vw;
 	}
 	@include mq("landscape"){
+		width: 94vw;
+		// margin: 0;
 	}
 	@include mq("desktop"){
 	}
 }
 .card-container{
 	display: grid;
+	// width: 100%;
 	//flex-direction: column;
 	grid-template-columns: 100%;
 	gap: 10px;
-	@include mq("desktop"){
+	@include mq("landscape"){
 		display: grid;
 		grid-template-columns: 50% 50%;
 	}
@@ -54,16 +58,23 @@ body{
 	font-size: 20px;
 }
 //footer
+footer {
+	// display: block;
+	// position:relative;
+	// width: 80vw;
+	// z-index: 50;
+	// bottom: -100vh;
+}
 .footer-copyright {
-	position: sticky;
-	bottom: 0;
-	left: 0px;
+	// position: absolute;
+	// bottom: 0px;
+	// left: 0px;
 	width: 80vw;
 	background-color: $flag-purple;
 	color: $flag-yellow;
 	padding: 10px 20px;
 	border-top-right-radius: 20px;
-	z-index: 10;
+	z-index: 50;
 	margin-top: 20px;
 	@include mq("tablet"){
 		width: fit-content;
@@ -136,8 +147,11 @@ button:hover {
 }
 .error-banner {
 	position: absolute;
-	top: -200px;
-	width: 100vw;
+	opacity: 0;
+	width: 90%;
+	margin: auto;
+	margin-bottom: 0;
+	margin-top: 0;
 	z-index: 50;
 	background-color: $flag-black;
 	color: $flag-white;
@@ -145,20 +159,19 @@ button:hover {
 	transition: all 0.5s ease-in-out;
 	text-align: center;
 	vertical-align: middle;
-	padding-top: 3vh;
-	padding-bottom: 5vh;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	border: 5px $flag-yellow solid;
-	border-bottom-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	border-top: none;
+	border-radius: 15px;
 	-webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5), inset 0 0 10px black;
 	-moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5), inset 0 0 10px black;
 	box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5), inset 0 0 10px black;
 }
 .error-banner-displayed {
-	position: sticky;
-	top: 0;
-	transition: all 0.5s ease-in-out;
-	height: 11vh;
 	z-index: 50;
+	position: sticky;
+	opacity: 1;
+	transition: all 0.5s ease-in-out;
+	// height: 11vh;
+	
 }

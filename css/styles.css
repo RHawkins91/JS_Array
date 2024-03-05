@@ -96,18 +96,23 @@ input {
   justify-content: center;
 }
 
-.random-image-card {
-  grid-row: 1;
-  grid-column: 1;
+@media (min-width: 981px) {
+  .random-image-card {
+    grid-row: 1;
+    grid-column: 1;
+  }
 }
 
-.assigned-images-card {
-  grid-column: 1/3;
-  grid-row: 2;
+@media (min-width: 981px) {
+  .assigned-images-card {
+    grid-column: 1/3;
+    grid-row: 2;
+  }
 }
 
 body {
   background-color: #2C2C2C;
+  overflow-x: hidden;
 }
 
 .heading-container {
@@ -130,12 +135,22 @@ body {
   width: 95vw;
   margin: auto;
 }
+@media (min-width: 769px) {
+  .container {
+    width: 94vw;
+  }
+}
+@media (min-width: 981px) {
+  .container {
+    width: 94vw;
+  }
+}
 .card-container {
   display: grid;
   grid-template-columns: 100%;
   gap: 10px;
 }
-@media (min-width: 1090px) {
+@media (min-width: 981px) {
   .card-container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -158,15 +173,12 @@ body {
 }
 
 .footer-copyright {
-  position: sticky;
-  bottom: 0;
-  left: 0px;
   width: 80vw;
   background-color: #9C59D1;
   color: #FCF434;
   padding: 10px 20px;
   border-top-right-radius: 20px;
-  z-index: 10;
+  z-index: 50;
   margin-top: 20px;
 }
 @media (min-width: 769px) {
@@ -250,8 +262,11 @@ button:hover {
 
 .error-banner {
   position: absolute;
-  top: -200px;
-  width: 100vw;
+  opacity: 0;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 0;
+  margin-top: 0;
   z-index: 50;
   background-color: #2C2C2C;
   color: #FFFFFF;
@@ -259,23 +274,20 @@ button:hover {
   transition: all 0.5s ease-in-out;
   text-align: center;
   vertical-align: middle;
-  padding-top: 3vh;
-  padding-bottom: 5vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 5px #FCF434 solid;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-top: none;
+  border-radius: 15px;
   -webkit-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5), inset 0 0 10px black;
   -moz-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5), inset 0 0 10px black;
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5), inset 0 0 10px black;
 }
 
 .error-banner-displayed {
-  position: sticky;
-  top: 0;
-  transition: all 0.5s ease-in-out;
-  height: 11vh;
   z-index: 50;
+  position: sticky;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
 }
 
 /*# sourceMappingURL=styles.css.map */

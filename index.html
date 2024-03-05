@@ -8,15 +8,23 @@
 </head>
 <body>
 	<div class="background-container">
-		<div class="error-banner" id="error-banner">	
-		</div>
 		<div class="container">	
 			<div class="heading-container">
 				<h1 class="title anim-text heading-text">Image Assigner</h1>
 				<h2 class="subheading heading-text">It Assigns Images</h2>
 			</div>
 			<div class="card-container">
+				<div class="card random-image-card">
+					<h1 class="heading-text">Image from Picsum</h1>
+					<div class="random-image-container">
+						<!-- Make this 600x600 -->
+						<!-- <image class="random-image"> -->
+					</div>
+					<button id="image-gen-button" class="image-gen-button">Generate new image</button>
+				</div>
 				<div class="card form-card">
+					<div class="error-banner" id="error-banner">	
+					</div>
 					<form name="email-form" class="email-assignment" onsubmit="return validateForm()">
 						<label for="email-input" class="heading-text">Email Address</label>
 						<input type="text" name="email-input" id="email-input">
@@ -26,14 +34,6 @@
 						</select>
 						<button id="assign-button">Assign Image</button>
 					</form>
-				</div>
-				<div class="card random-image-card">
-					<h1 class="heading-text">Image from Picsum</h1>
-					<div class="random-image-container">
-						<!-- Make this 600x600 -->
-						<!-- <image class="random-image"> -->
-					</div>
-					<button id="image-gen-button" class="image-gen-button">Generate new image</button>
 				</div>
 				<div class="card assigned-images-card">
 					<h1 class="heading-text">Assigned Images</h1>
@@ -45,9 +45,9 @@
 			</div>
 		</div>
 	</div>
-	<footer>
+	<!-- <footer>
 		<p class="footer-copyright">Copyright© 2024 Robert Hawkins, No rights Reserved.</p>
-	</footer>
+	</footer> -->
 	<script src="js/app.js"></script>	
 </body>
 </html>

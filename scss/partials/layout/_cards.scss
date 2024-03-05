@@ -40,10 +40,14 @@
 	justify-content: center;
 }
  .random-image-card {
- 	grid-row: 1;
- 	grid-column: 1;
+ 	@include mq("landscape"){
+	 	grid-row: 1;
+	 	grid-column: 1;
+	 }
  }
 .assigned-images-card {
+	@include mq("landscape"){
 	grid-column: 1/3;
 	grid-row: 2;
+	}
 }
