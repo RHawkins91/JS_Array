@@ -9,8 +9,7 @@ var assignedImage = null
 
 var emailDropdown = document.getElementById("email-dropdown");
 var assignedImageContainer = document.getElementById("assigned-image-container")
-
-
+var errorBox = document.getElementById("error-banner")
 
 
 //Dictionary
@@ -41,21 +40,25 @@ async function remove_old_image() {
 
 // Form validation
 function validateForm() {
-	let form = document.forms["email-form"]["email-input"].value;
-	let regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+	var form = document.forms["email-form"]["email-input"].value;
+	var regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 	if (form == "") {
-		alert("Email must not be empty");
+		errorBox.classList.add("error-banner-displayed");
+		errorBox.innerHTML = "<h1 class ='error-heading'>Email must not be empty</h1>"
 		document.getElementById("email-input").focus();
 		return false;
 	} else if (!regex.test(form)){
-		alert ("Invalid Email")
+		errorBox.classList.add("error-banner-displayed");
+		errorBox.innerHTML = "<h1 class ='error-heading'>Email address is invalid</h1>"
 		document.getElementById("email-input").focus();
 		return false
 	} else {
-		//alert ("Good job!")
+		errorBox.classList.remove("error-banner-displayed");
 		email_image_group_thing(form)
-		//console.log(emailImagePairDict)
 		push_image_into_array(emailImagePairDict[form], assignedImage)
+		email_selected()
+		remove_old_image()
+		gen_image()
 		return false
 		
 	}
@@ -72,8 +75,10 @@ function email_image_group(email){
 function push_image_into_array(email_image_pair, image){
 	if (!(email_image_pair.images.includes(image))){
 		email_image_pair.images.push(image);
+		errorBox.classList.remove("error-banner-displayed");
 	} else {
-		console.log("Already there")
+		errorBox.classList.add("error-banner-displayed");
+		errorBox.innerHTML = "<h1 class ='error-heading'>You have already assigned this image to your email address</h1>";
 		return
 	}
 };
@@ -92,10 +97,11 @@ emailDropdown.addEventListener("change", email_selected)
 
 function email_selected() {
 	var emailSelected = emailDropdown.value;
+	document.forms["email-form"]["email-input"].value = emailSelected
 	clear_images()
 	document.getElementById("assigned-image-heading").innerHTML = emailSelected;
 	emailImagePairDict[emailSelected].images.forEach(populate_images)
-	console.log("new email selected" + emailSelected);
+	// console.log("new email selected" + emailSelected);
 }
 
 function populate_images(value){
@@ -110,22 +116,6 @@ function clear_images(){
     assignedImageContainer.removeChild(assignedImageContainer.lastChild);
   }
 }
-
-
-//Object 
-// const emailImageGroup = {
-// 	email: "",
-// 	images: []
-// };
-//if (email in email_dict){
-	//this.images = this.images.push(image);
-	// 	console.log(email_dict[this.email])
-	// 	console.log(email_dict[this.email].images)
-	// 	email_dict[this.email].images.push(image);
-	// 	return;
-	// } else {
-	// email_dict[this.email] = this;
-	// }
 
 
 // Title Animation
