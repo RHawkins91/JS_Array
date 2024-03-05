@@ -24,8 +24,8 @@
 			width: 400px;
 		}
 		@include mq("desktop"){
-			height: 600px;
-			width: 600px;
+			height: 400px;
+			width: 400px;
 		}
 	}
 	button {
@@ -33,6 +33,17 @@
 		align-self: center;
 	}
 }
-// .random-image-card {
-// 	height: 534px;
-// }
+.form-card {
+	height: 100%;
+	align-content: center;
+	justify-items: center;
+	justify-content: center;
+}
+ .random-image-card {
+ 	grid-row: 1;
+ 	grid-column: 1;
+ }
+.assigned-images-card {
+	grid-column: 1/3;
+	grid-row: 2;
+}

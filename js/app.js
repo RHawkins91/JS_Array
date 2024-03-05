@@ -58,8 +58,9 @@ function validateForm() {
 		email_image_group_thing(form)
 		push_image_into_array(emailImagePairDict[form], assignedImage)
 		email_selected()
-		remove_old_image()
-		gen_image()
+		//Unsure if this should be here, brief says "A new image is then displayed" but peer testing indicated it shouldn't generate a new image on assign so have commented out
+		// remove_old_image() 
+		// gen_image()
 		return false
 		
 	}

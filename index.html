@@ -16,15 +16,7 @@
 				<h2 class="subheading heading-text">It Assigns Images</h2>
 			</div>
 			<div class="card-container">
-				<div class="card random-image-card">
-					<h1 class="heading-text">Image from Picsum</h1>
-					<div class="random-image-container">
-						<!-- Make this 600x600 -->
-						<!-- <image class="random-image"> -->
-					</div>
-					<button id="image-gen-button" class="image-gen-button">Generate new image</button>
-				</div>
-				<div class="card">
+				<div class="card form-card">
 					<form name="email-form" class="email-assignment" onsubmit="return validateForm()">
 						<label for="email-input" class="heading-text">Email Address</label>
 						<input type="text" name="email-input" id="email-input">
@@ -35,7 +27,15 @@
 						<button id="assign-button">Assign Image</button>
 					</form>
 				</div>
-				<div class="card">
+				<div class="card random-image-card">
+					<h1 class="heading-text">Image from Picsum</h1>
+					<div class="random-image-container">
+						<!-- Make this 600x600 -->
+						<!-- <image class="random-image"> -->
+					</div>
+					<button id="image-gen-button" class="image-gen-button">Generate new image</button>
+				</div>
+				<div class="card assigned-images-card">
 					<h1 class="heading-text">Assigned Images</h1>
 					<h1 class="heading-text" id="assigned-image-heading"></h1>
 					<div class="assigned-image-container" id="assigned-image-container">
