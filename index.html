@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>JS Array reflection</title>
+	<title>JS Array Assessment</title>
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -17,28 +17,29 @@
 			</div>
 			<div class="card-container">
 				<div class="card random-image-card">
-					<h1 class="heading-text">Your Image, My Leige</h1>
+					<h1 class="heading-text">Image from Picsum</h1>
 					<div class="random-image-container">
 						<!-- Make this 600x600 -->
 						<!-- <image class="random-image"> -->
 					</div>
-					<button id="image-gen-button" class="image-gen-button">Or perhaps another?</button>
+					<button id="image-gen-button" class="image-gen-button">Generate new image</button>
 				</div>
 				<div class="card">
 					<form name="email-form" class="email-assignment" onsubmit="return validateForm()">
-						<label for="email-input" class="heading-text">Shall I send it to a new address?</label>
+						<label for="email-input" class="heading-text">Email Address</label>
 						<input type="text" name="email-input" id="email-input">
-						<label for="email-dropdown" class="heading-text">Or an ancestral manor, perchance?</label> 
+						<label for="email-dropdown" class="heading-text">Previous Addresses</label> 
 						<select name="email-dropdown" id="email-dropdown">
 							<!-- [JS] add options here -->
 						</select>
-						<button id="assign-button">Claim The Image As Your Very Own</button>
+						<button id="assign-button">Assign Image</button>
 					</form>
 				</div>
 				<div class="card">
-					<h1 class="heading-text">Images</h1>
+					<h1 class="heading-text">Assigned Images</h1>
 					<h1 class="heading-text" id="assigned-image-heading"></h1>
 					<div class="assigned-image-container" id="assigned-image-container">
+						<h1 class="heading-text">Assign an image to an email to see it here</h1>
 					</div>
 				</div>
 			</div>

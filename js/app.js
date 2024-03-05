@@ -11,26 +11,27 @@ var emailDropdown = document.getElementById("email-dropdown");
 var assignedImageContainer = document.getElementById("assigned-image-container")
 var errorBox = document.getElementById("error-banner")
 
-
-//Dictionary
+	//Dictionary for image/email groups
 var emailImagePairDict = {};
 
 
-	//Event Listeners
+	//generate an image on page load
 randomImg.addEventListener('load', gen_image());
 
+	//generate an image on button click
 assignButton.addEventListener('click',() => {    
      remove_old_image();
      gen_image();    
 });
 
-	//Functions
+	//fires when an image needs to be generated
 async function gen_image() {
 	randomImg = document.createElement("img")
 	randomImg.src = picsumUrl + new Date().getTime()
 	imageRandomContainer.appendChild(randomImg)
 	assignedImage = randomImg.src
 };
+	//removes the old images
 async function remove_old_image() {
 	imageRandomContainer.removeChild(randomImg)
 };
@@ -65,13 +66,13 @@ function validateForm() {
 } 
 
 //Assign image to email
-
-//Constructor
+	//Constructor for image/email group object
 function email_image_group(email){
 	this.email = email;
 	this.images = [];
 };
 
+	//Put the images into the array
 function push_image_into_array(email_image_pair, image){
 	if (!(email_image_pair.images.includes(image))){
 		email_image_pair.images.push(image);
@@ -83,6 +84,7 @@ function push_image_into_array(email_image_pair, image){
 	}
 };
 
+	//add a new option to the drop-down
 function email_image_group_thing(email, email_image_pair_dict=emailImagePairDict){
 	if (!(email in email_image_pair_dict)){
 		var newOption = document.createElement("option");
@@ -92,18 +94,18 @@ function email_image_group_thing(email, email_image_pair_dict=emailImagePairDict
 		console.log(email_image_pair_dict)
 	};
 };
-
+	//event listener for drop-down selection
 emailDropdown.addEventListener("change", email_selected)
 
+	//fires when you select an email
 function email_selected() {
 	var emailSelected = emailDropdown.value;
 	document.forms["email-form"]["email-input"].value = emailSelected
 	clear_images()
-	document.getElementById("assigned-image-heading").innerHTML = emailSelected;
+	document.getElementById("assigned-image-heading").innerHTML = "Images assigned to " + emailSelected;
 	emailImagePairDict[emailSelected].images.forEach(populate_images)
-	// console.log("new email selected" + emailSelected);
 }
-
+	//Populates the image container with the contents of the array
 function populate_images(value){
 	var image = document.createElement("img");
 	image.src = value
@@ -111,6 +113,7 @@ function populate_images(value){
 	assignedImageContainer.appendChild(image)
 	console.log("wooo" + " " + value)
 }
+	//Clears the image container
 function clear_images(){
   while (assignedImageContainer.firstChild) {
     assignedImageContainer.removeChild(assignedImageContainer.lastChild);
