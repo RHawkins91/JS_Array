@@ -1,5 +1,6 @@
 //cards
 .card {
+	position: relative;
 	border: 5px $flag-purple solid;
 	border-radius: 15px;
 	text-align: center;
@@ -50,4 +51,7 @@
 	grid-column: 1/3;
 	grid-row: 2;
 	}
+}
+.assigned-image {
+	margin: 10px;
 }
