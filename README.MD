@@ -7,5 +7,7 @@
 - ~~**Create Base Stylesheet**~~
 - ~~**Hook in to picsum**~~
 - ~~**Validate email**~~
-- **Store Image and Email**
-- **Display Image and Email**
+- ~~**Store Image and Email**~~
+- ~~**Display Image and Email**~~
+- **Adjust styling**
+- **Test rigourously**

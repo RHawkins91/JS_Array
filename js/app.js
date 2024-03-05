@@ -7,6 +7,11 @@ const assignButton = document.getElementById("image-gen-button");
 var randomImg = document.createElement('img');
 var assignedImage = null
 
+var emailDropdown = document.getElementById("email-dropdown");
+var assignedImageContainer = document.getElementById("assigned-image-container")
+
+
+
 
 //Dictionary
 var emailImagePairDict = {};
@@ -47,9 +52,9 @@ function validateForm() {
 		document.getElementById("email-input").focus();
 		return false
 	} else {
-		alert ("Good job!")
+		//alert ("Good job!")
 		email_image_group_thing(form)
-		console.log(emailImagePairDict)
+		//console.log(emailImagePairDict)
 		push_image_into_array(emailImagePairDict[form], assignedImage)
 		return false
 		
@@ -75,10 +80,37 @@ function push_image_into_array(email_image_pair, image){
 
 function email_image_group_thing(email, email_image_pair_dict=emailImagePairDict){
 	if (!(email in email_image_pair_dict)){
+		var newOption = document.createElement("option");
 		email_image_pair_dict[email] = new email_image_group(email)
+		newOption.text = email
+		emailDropdown.add(newOption)
 		console.log(email_image_pair_dict)
 	};
 };
+
+emailDropdown.addEventListener("change", email_selected)
+
+function email_selected() {
+	var emailSelected = emailDropdown.value;
+	clear_images()
+	document.getElementById("assigned-image-heading").innerHTML = emailSelected;
+	emailImagePairDict[emailSelected].images.forEach(populate_images)
+	console.log("new email selected" + emailSelected);
+}
+
+function populate_images(value){
+	var image = document.createElement("img");
+	image.src = value
+	image.classList.add("assigned-image")
+	assignedImageContainer.appendChild(image)
+	console.log("wooo" + " " + value)
+}
+function clear_images(){
+  while (assignedImageContainer.firstChild) {
+    assignedImageContainer.removeChild(assignedImageContainer.lastChild);
+  }
+}
+
 
 //Object 
 // const emailImageGroup = {
