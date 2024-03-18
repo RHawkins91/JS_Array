@@ -169,6 +169,8 @@ input {
   align-items: center;
 }
 .email-assignment input {
+  font-size: 18px;
+  height: 34px;
   width: 80%;
   color: #FFFFFF;
   background-color: #464646;
@@ -188,6 +190,8 @@ input {
   box-shadow: 0px 0px 20px 1px rgba(252, 0, 236, 0.5);
 }
 .email-assignment select {
+  height: 34px;
+  font-size: 18px;
   width: 80%;
   color: #FFFFFF;
   background-color: #464646;
