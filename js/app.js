@@ -52,7 +52,6 @@ function validateForm() {
 		document.getElementById("email-input").focus();
 		return false
 	} else {
-		message_box(3)
 		email_image_group_thing(form)
 		push_image_into_array(emailImagePairDict[form], assignedImage)
 		//clear_input()
@@ -73,7 +72,7 @@ function email_image_group(email){
 function push_image_into_array(email_image_pair, image){
 	if (!(email_image_pair.images.includes(image))){
 		email_image_pair.images.push(image);
-		errorBox.classList.remove("error-banner-displayed");
+		message_box(3)
 	} else {
 		message_box(2)
 		return
@@ -126,26 +125,30 @@ function clear_input(){
 //1 = invalid email
 //2 = pair already exists
 //3 = success
-function message_box(message_case){
+async function message_box(message_case){
 	if (message_case === 0) {
-		errorBox.classList.remove("error-banner-displayed");
 		errorBox.classList.add("error-banner-displayed");
 		errorBox.innerHTML = "<h1 class ='error-heading'>Email must not be empty</h1>"
+		setTimeout(clear_message_box, 3000);
 	} else if (message_case === 1) {
-		errorBox.classList.remove("error-banner-displayed");
 		errorBox.classList.add("error-banner-displayed");
 		errorBox.innerHTML = "<h1 class ='error-heading'>Email address is invalid</h1>"
+		setTimeout(clear_message_box, 3000);
 	} else if (message_case === 2) {
-		errorBox.classList.remove("error-banner-displayed");
 		errorBox.classList.add("error-banner-displayed");
 		errorBox.innerHTML = "<h1 class ='error-heading'>You have already assigned this image to your email address</h1>"
+		setTimeout(clear_message_box, 3000);
 	} else if (message_case === 3) {
-		errorBox.classList.remove("error-banner-displayed");
 		errorBox.classList.add("error-banner-displayed");
 		errorBox.innerHTML = "<h1 class ='error-heading'>Successfully assigned image</h1>"
+		setTimeout(clear_message_box, 3000);
 	} else {
 		console.log("Message case out of range")
 	}
+}
+//clears the error box
+async function clear_message_box(){
+	errorBox.classList.remove("error-banner-displayed");
 }
 
 // Title Animation
