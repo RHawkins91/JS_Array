@@ -44,23 +44,19 @@ function validateForm() {
 	var form = document.forms["email-form"]["email-input"].value;
 	var regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 	if (form == "") {
-		errorBox.classList.add("error-banner-displayed");
-		errorBox.innerHTML = "<h1 class ='error-heading'>Email must not be empty</h1>"
+		message_box(0)
 		document.getElementById("email-input").focus();
 		return false;
 	} else if (!regex.test(form)){
-		errorBox.classList.add("error-banner-displayed");
-		errorBox.innerHTML = "<h1 class ='error-heading'>Email address is invalid</h1>"
+		message_box(1)
 		document.getElementById("email-input").focus();
 		return false
 	} else {
-		errorBox.classList.remove("error-banner-displayed");
+		message_box(3)
 		email_image_group_thing(form)
 		push_image_into_array(emailImagePairDict[form], assignedImage)
+		//clear_input()
 		email_selected()
-		//Unsure if this should be here, brief says "A new image is then displayed" but peer testing indicated it shouldn't generate a new image on assign so have commented out
-		// remove_old_image() 
-		// gen_image()
 		return false
 		
 	}
@@ -79,8 +75,7 @@ function push_image_into_array(email_image_pair, image){
 		email_image_pair.images.push(image);
 		errorBox.classList.remove("error-banner-displayed");
 	} else {
-		errorBox.classList.add("error-banner-displayed");
-		errorBox.innerHTML = "<h1 class ='error-heading'>You have already assigned this image to your email address</h1>";
+		message_box(2)
 		return
 	}
 };
@@ -120,7 +115,38 @@ function clear_images(){
     assignedImageContainer.removeChild(assignedImageContainer.lastChild);
   }
 }
-
+ //clears the input field
+function clear_input(){
+	if (document.forms["email-form"]["email-input"].value !== ""){
+		document.forms["email-form"]["email-input"].value = ""
+	}
+}
+//shows the error box
+//0 = empty email
+//1 = invalid email
+//2 = pair already exists
+//3 = success
+function message_box(message_case){
+	if (message_case === 0) {
+		errorBox.classList.remove("error-banner-displayed");
+		errorBox.classList.add("error-banner-displayed");
+		errorBox.innerHTML = "<h1 class ='error-heading'>Email must not be empty</h1>"
+	} else if (message_case === 1) {
+		errorBox.classList.remove("error-banner-displayed");
+		errorBox.classList.add("error-banner-displayed");
+		errorBox.innerHTML = "<h1 class ='error-heading'>Email address is invalid</h1>"
+	} else if (message_case === 2) {
+		errorBox.classList.remove("error-banner-displayed");
+		errorBox.classList.add("error-banner-displayed");
+		errorBox.innerHTML = "<h1 class ='error-heading'>You have already assigned this image to your email address</h1>"
+	} else if (message_case === 3) {
+		errorBox.classList.remove("error-banner-displayed");
+		errorBox.classList.add("error-banner-displayed");
+		errorBox.innerHTML = "<h1 class ='error-heading'>Successfully assigned image</h1>"
+	} else {
+		console.log("Message case out of range")
+	}
+}
 
 // Title Animation
 	//Variables
