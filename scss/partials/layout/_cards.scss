@@ -18,8 +18,8 @@
 		-webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5);
 		-moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5);
 		box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5);
-		height: 300px;
-		width: 300px;
+		height: 200px;
+		width: 200px;
 		@include mq("tablet"){
 			height: 400px;
 			width: 400px;
@@ -30,8 +30,11 @@
 		}
 	}
 	button {
-		width: 300px;
+		width: 200px;
 		align-self: center;
+		@include mq("tablet"){
+			width: 300px;
+		}
 	}
 }
 .form-card {
